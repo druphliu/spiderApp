@@ -1,0 +1,36 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="资产详情">
+  <ion-content class="padding" scroll="false">
+    <div class="list card">
+      <div class="item">
+        <h2>{{item.title}}</h2>
+        <p>抓取时间:{{item.created_at}}</p>
+      </div>
+
+      <div class="item item-body">
+        <p>所在地:{{item.area}}</p>
+        <p>开始时间:{{item.start_at}} 结束时间:{{item.deadline_at}}</p>
+        <p>起拍价:{{item.evaluation_price}}万元</p>
+        <p>评估价:{{item.reference_price}}万元</p>
+        <p ng-if="item.building_area">建筑面积:{{item.building_area}}平方米</p>
+        <p>平台:{{item.channel_name}}</p>
+        <p>
+        <div class="row">
+        <div class="col col-offset-20">
+          <button class="button button-calm button-small"><i
+          class="ion-ios-star"></i>立即收藏</button>
+        </div>
+          <div class="col col-offset-30"><a class="button button-calm button-small" href="{{item.data_url}}"><i
+            class="ion-ios-redo"></i>原始链接</a>
+          </div>
+        </div>
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

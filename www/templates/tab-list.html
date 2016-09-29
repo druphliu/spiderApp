@@ -1,0 +1,29 @@
+<ion-view view-title="列表">
+  <!--<div class="bar bar-subheader">
+    <ul class="item-floating-label">
+    <li class="slide"><b>自营资产</b><i class="ion-ios-arrow-down"></i></li>
+    <li class="slide"><b>全部</b><i class="ion-ios-arrow-down"></i></li>
+    <li class="slide"><b>全部</b><i class="ion-ios-arrow-down"></i></li>
+    <li class="moreslide"><b>更多</b><i class="ion-ios-arrow-down"></i></li>
+    </ul>
+  </div>-->
+  <!--<ion-content class="has-subheader">-->
+  <ion-content>
+    <ion-refresher
+      pulling-text="下拉刷新"
+      on-refresh="loadNewerStories()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="item in list" type="item-text-wrap"
+                href="#/tab/list/{{item.id}}">
+        <h2>{{item.title}}</h2>
+        <p>起拍价:{{item.evaluation_price}}万元</p>
+        <p>所在地:{{item.area}}</p>
+        <p>开始时间:{{item.start_at}} 结束时间:{{item.deadline_at}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+
+    </ion-list>
+    <ion-infinite-scroll ng-if="moredata" on-infinite="loadOlderStories()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
