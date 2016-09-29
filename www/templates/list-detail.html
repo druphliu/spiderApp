@@ -7,17 +7,18 @@
 <ion-view view-title="资产详情">
   <ion-content class="padding" scroll="false">
     <div class="list card">
-      <div class="item">
+      <div class="item item-text-wrap">
         <h2>{{item.title}}</h2>
         <p>抓取时间:{{item.created_at}}</p>
       </div>
 
       <div class="item item-body">
-        <p>所在地:{{item.area}}</p>
-        <p>开始时间:{{item.start_at}} 结束时间:{{item.deadline_at}}</p>
-        <p>起拍价:{{item.evaluation_price}}万元</p>
-        <p>评估价:{{item.reference_price}}万元</p>
-        <p ng-if="item.building_area">建筑面积:{{item.building_area}}平方米</p>
+        <p>所在地:<span ng-if="item.area">{{item.area}}</span><span ng-if="!item.area">--</span></p>
+        <p>开始时间:{{item.start_at}}</p>
+        <p>结束时间:{{item.deadline_at}}</p>
+        <p>起拍价:<span ng-if="item.evaluation_price">{{item.evaluation_price}}</span><span ng-if="!item.evaluation_price">--</span>万元</p>
+        <p>评估价:<span ng-if="item.reference_price">{{item.reference_price}}</span><span ng-if="!item.reference_price">--</span>万元</p>
+        <p ng-if="item.type==1">建筑面积:{{item.building_area}}平方米</p>
         <p>平台:{{item.channel_name}}</p>
         <p>
         <div class="row">

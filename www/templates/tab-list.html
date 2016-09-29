@@ -17,8 +17,8 @@
       <ion-item class="item-remove-animate item-icon-right" ng-repeat="item in list" type="item-text-wrap"
                 href="#/tab/list/{{item.id}}">
         <h2>{{item.title}}</h2>
-        <p>起拍价:{{item.evaluation_price}}万元</p>
-        <p>所在地:{{item.area}}</p>
+        <p>起拍价:<span ng-if="item.evaluation_price">{{item.evaluation_price}}</span><span ng-if="!item.evaluation_price">--</span>万元</p>
+        <p>所在地:<span ng-if="item.area">{{item.area}}</span><span ng-if="!item.area">--</span></p>
         <p>开始时间:{{item.start_at}} 结束时间:{{item.deadline_at}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
