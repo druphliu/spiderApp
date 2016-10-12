@@ -1,5 +1,5 @@
-var url_base = "http://127.0.0.1:90/"; //dev
-//var url_base = "http://wj.zzyuqing.com/api.php?";//production
+//var url_base = "http://127.0.0.1:90/"; //dev
+var url_base = "http://218.89.241.79:8081/";//production
 
 url_list = function(catid,page){
   var url_news_list = url_base+"api/list?";

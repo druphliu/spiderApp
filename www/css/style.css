@@ -1,1 +1,66 @@
 /* Empty. Add your own CSS if you like */
+/*----------------------------------------------------list------------------------------------------------------------*/
+.tab-list .bar-subheader a {
+  float: left;
+  width: 33.33%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  position: relative;
+  overflow: hidden;
+  color:#000;
+}
+
+.tab-list .bar-subheader a:after {
+  content: "";
+  width: 1px;
+  height: 20px;
+  border-right: 1px dashed #ddd;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.tab-list .bar-subheader a:last-child:after {
+  border-right: none;
+}
+
+.tab-list .bar-subheader a:last-child {
+  border-right: none;
+}
+.tab-list .bar-subheader .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  list-style: none;
+  text-shadow: none;
+  padding: 0px;
+  width: 100%;
+  background-color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.tab-list .bar-subheader .dropdown-menu li > a {
+  padding: 8px 14px;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  clear: both;
+  font-weight: 300;
+  line-height: 18px;
+  white-space: nowrap;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+.mark{
+  position: absolute;
+  background-color:rgba(0,0,0,.1);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}

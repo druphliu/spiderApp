@@ -1,14 +1,20 @@
-<ion-view view-title="列表">
-  <!--<div class="bar bar-subheader">
-    <ul class="item-floating-label">
-    <li class="slide"><b>自营资产</b><i class="ion-ios-arrow-down"></i></li>
-    <li class="slide"><b>全部</b><i class="ion-ios-arrow-down"></i></li>
-    <li class="slide"><b>全部</b><i class="ion-ios-arrow-down"></i></li>
-    <li class="moreslide"><b>更多</b><i class="ion-ios-arrow-down"></i></li>
+<ion-view view-title="列表" class="tab-list">
+  <div class="bar bar-subheader">
+      <a class="" ng-click="showPop()"><span>全部</span><i class="ion-ios-arrow-down"></i></a>
+    <ul class="dropdown-menu pull-right">
+      <li>
+        <a href="javascript:;">动产</a>
+      </li>
+      <li>
+        <a href="javascript:;">不动产</a>
+      </li>
     </ul>
-  </div>-->
-  <!--<ion-content class="has-subheader">-->
-  <ion-content>
+      <a class="" ng-click="showPop()"><span>全部</span><i class="ion-ios-arrow-down"></i></a>
+      <a class="" ng-click="showPop()"><span>全部</span><i class="ion-ios-arrow-down"></i></a>
+    <!--  <li class="" ng-click="search()"><span>更多</span><i class="ion-ios-arrow-down"></i></li>-->
+  </div>
+  <ion-content class="has-subheader">
+    <div class="mark"></div>
     <ion-refresher
       pulling-text="下拉刷新"
       on-refresh="loadNewerStories()">
@@ -27,3 +33,4 @@
     <ion-infinite-scroll ng-if="moredata" on-infinite="loadOlderStories()" distance="1%"></ion-infinite-scroll>
   </ion-content>
 </ion-view>
+
