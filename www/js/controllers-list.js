@@ -23,7 +23,7 @@ angular.module('starter.controllers')
     }//加载更多
     function _loadList(type, from, isSearch) {
       if (isSearch)Helper.showLoading();
-      $scope.page = $scope.page ? $scope.page : 1;
+      $scope.page = $scope.page&&isSearch==false ? $scope.page : 1;
       return List.loadList(type, from, $scope.page).then(function (data) {
         if (isSearch)Helper.hideLoading();
         if (data.status == 100) {
