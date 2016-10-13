@@ -9,7 +9,7 @@
     <div class="list card">
       <div class="item item-text-wrap">
         <h2>{{item.title}}</h2>
-        <p>抓取时间:{{item.created_at}}</p>
+        <p>抓取时间: {{item.created_at}}  平台: {{item.channel_name}}</p>
       </div>
 
       <div class="item item-body">
@@ -19,7 +19,6 @@
         <p>起拍价:<span ng-if="item.evaluation_price">{{item.evaluation_price}}</span><span ng-if="!item.evaluation_price">--</span>万元</p>
         <p>评估价:<span ng-if="item.reference_price">{{item.reference_price}}</span><span ng-if="!item.reference_price">--</span>万元</p>
         <p ng-if="item.type==1">建筑面积:{{item.building_area}}平方米</p>
-        <p>平台:{{item.channel_name}}</p>
         <p>
         <div class="row">
         <div class="col col-offset-20">
