@@ -64,3 +64,6 @@
   height: 100%;
   z-index: 1000;
 }
+.loading-container .loading{
+  background-color: transparent !important;
+}

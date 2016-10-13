@@ -1,20 +1,30 @@
 <ion-view view-title="列表" class="tab-list">
   <div class="bar bar-subheader">
-      <a class="" ng-click="showPop()"><span>全部</span><i class="ion-ios-arrow-down"></i></a>
-    <ul class="dropdown-menu pull-right">
+      <a class="" ng-click="showPop(params.TYPE_PROJECT)"><span>{{project_type_name}}</span><i class="ion-ios-arrow-down"></i></a>
+    <ul class="dropdown-menu pull-right" ng-hide="project_type">
       <li>
-        <a href="javascript:;">动产</a>
+        <a href="javascript:;" ng-click="search(params.TYPE_PROJECT,params.PROJECT_TYPE_DONGCHAN)">动产</a>
       </li>
       <li>
-        <a href="javascript:;">不动产</a>
+        <a href="javascript:;" ng-click="search(params.TYPE_PROJECT,params.PROJECT_TYPE_BUDONGCHAN)">不动产</a>
+      </li>
+    </ul>
+      <a class="" ng-click="showPop(params.TYPE_FROM)"><span>{{from_type_name}}</span><i class="ion-ios-arrow-down"></i></a>
+    <ul class="dropdown-menu pull-right" ng-hide="from_type">
+      <li>
+        <a href="javascript:;" ng-click="search(params.TYPE_FROM,params.FROM_TYPE_FAYUAN)">人民法院</a>
+      </li>
+      <li>
+        <a href="javascript:;" ng-click="search(params.TYPE_FROM,params.FROM_TYPE_PAIMAIGONGSI)">拍卖公司</a>
+      </li>
+      <li>
+        <a href="javascript:;" ng-click="search(params.TYPE_FROM,params.FROM_TYPE_JIAOYISUO)">交易所</a>
       </li>
     </ul>
       <a class="" ng-click="showPop()"><span>全部</span><i class="ion-ios-arrow-down"></i></a>
-      <a class="" ng-click="showPop()"><span>全部</span><i class="ion-ios-arrow-down"></i></a>
-    <!--  <li class="" ng-click="search()"><span>更多</span><i class="ion-ios-arrow-down"></i></li>-->
   </div>
   <ion-content class="has-subheader">
-    <div class="mark"></div>
+    <div class="mark" ng-hide="mark"></div>
     <ion-refresher
       pulling-text="下拉刷新"
       on-refresh="loadNewerStories()">

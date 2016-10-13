@@ -81,5 +81,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');
+})
+  .constant(
+    'params', {
+      'PROJECT_TYPE_DONGCHAN': 1,
+      PROJECT_TYPE_BUDONGCHAN: 2,
+      'FROM_TYPE_FAYUAN': 1,
+      'FROM_TYPE_JIAOYISUO': 2,
+      'FROM_TYPE_PAIMAIGONGSI': 3,
+      'TYPE_FROM': 'from',
+      'TYPE_PROJECT': 'project'
+    }
+  );
 
-});

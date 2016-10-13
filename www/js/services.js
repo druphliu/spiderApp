@@ -1,10 +1,10 @@
 //var url_base = "http://127.0.0.1:90/"; //dev
 var url_base = "http://218.89.241.79:8081/";//production
 
-url_list = function(catid,page){
+url_list = function(type,from,page){
   var url_news_list = url_base+"api/list?";
   url_news_list = page ? url_news_list + '&page=' + page : url_news_list;
-  return url_news_list + "&catid=" + catid ;
+  return url_news_list + "&type=" + type +'&from='+from;
 }
 url_list_view = function(id){
   var url_news_view = url_base+"api/view";
@@ -72,7 +72,7 @@ angular.module('starter.services', [])
     }
   }
 })
-  .factory('Helper',function($ionicPopup,$state,$ionicHistory){
+  .factory('Helper',function($ionicPopup,$state,$ionicHistory,$ionicLoading){
     return {
       noLoginPopup:function(){
         var confirmPopup = $ionicPopup.confirm({
@@ -106,7 +106,16 @@ angular.module('starter.services', [])
             ionic.Platform.exitApp();
           }
         });
-      }
+      },
+      showLoading:function(){
+        $ionicLoading.show({
+          noBackdrop:true,
+          template: '<div><ion-spinner icon="ios" ></ion-spinner></i></div><div>加载中</div>'
+        });
+      },
+      hideLoading:function(){
+      $ionicLoading.hide();
+    }
     }
   })
 .config(function ($httpProvider) {
